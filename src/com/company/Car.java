@@ -8,21 +8,21 @@ public class Car implements ICar
     private String Brand;
     private String Model;
     private int Year;
-    private String Colour;
+    private String Color;
 
-    public Car(String RegNum, String Brand, String Model, int Year, String Colour)
+    public Car(String RegNum, String Brand, String Model, int Year, String Color)
     {
         this.RegNum = RegNum;
         this.Brand = Brand;
         this.Model = Model;
         this.Year = Year;
-        this.Colour = Colour;
+        this.Color = Color;
     }
 
     @Override
     public String toString()
     {
-        return RegNum + "," + Brand + "," + Model + "," + Year + "," + Colour;
+        return RegNum + "," + Brand + "," + Model + "," + Year + "," + Color;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class Car implements ICar
     @Override
     public String getColor()
     {
-        return Colour;
+        return Color;
     }
 
 }

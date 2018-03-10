@@ -9,7 +9,7 @@ This interface should be implemented to solve all the the exercises. Initially y
 */
 {
     // 1: add a car to the collection of cars (not to the text file)
-    void addCar(String registrationNumber, String brand, String model, int year, String color) throws AlreadyExistsException;
+    Collection<ICar> addCar(String registrationNumber, String brand, String model, int year, String color) throws AlreadyExistsException;
     // 2: get all the cars in the collection (the cars that were read from the textfile into the java collection - i.e. List, Map etc..
     Collection<ICar> getAllCars();
     // 3: remove a car from the collection of cars

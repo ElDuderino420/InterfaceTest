@@ -19,6 +19,7 @@ public class CarCollection implements ICarCollection
 
     private List<ICar> Cars;
     private Map<String, ICar> RegMap;
+
     private String line;
 
     public CarCollection()
@@ -34,7 +35,7 @@ public class CarCollection implements ICarCollection
     }
 
     @Override
-    public void addCar(String registrationNumber, String brand, String model, int year, String color) throws AlreadyExistsException
+    public Collection<ICar> addCar(String registrationNumber, String brand, String model, int year, String color) throws AlreadyExistsException
     {
         for (ICar Car : Cars)
         {
@@ -45,6 +46,7 @@ public class CarCollection implements ICarCollection
         }
         Cars.add(new Car(registrationNumber, brand, model, year, color));
         RegMap.put(registrationNumber, new Car(registrationNumber, brand, model, year, color));
+        return Cars;
     }
 
     @Override

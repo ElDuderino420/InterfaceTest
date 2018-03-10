@@ -9,8 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarCollectionTest5 {
 
-    private ICarCollection getNewTestSubject()
-    {
+    private ICarCollection getNewTestSubject() {
         ICarCollection col = new CarCollection();
         return col;
     }
@@ -24,14 +23,12 @@ class CarCollectionTest5 {
     }
 
     @Test
-    public void testAddCar() throws AlreadyExistsException
-    {
+    public void testAddCar() throws AlreadyExistsException {
         ICarCollection testSubject = getNewTestSubject();
         testSubject.addCar("ED12345", "VW", "Polo", 2001, "Red");
         Collection<ICar> allCars = testSubject.getAllCars();
         assertEquals(allCars.size(), 1);
-        for(ICar car : allCars)
-        {
+        for (ICar car : allCars) {
             assertEquals(car.getRegistrationNumber(), "ED12345");
             assertEquals(car.getBrand(), "VW");
             assertEquals(car.getModel(), "Polo");
@@ -42,8 +39,7 @@ class CarCollectionTest5 {
     }
 
     @Test
-    public void testGetAllCars() throws AlreadyExistsException
-    {
+    public void testGetAllCars() throws AlreadyExistsException {
         ICarCollection testSubject = getNewTestSubject();
         testSubject.addCar("ZZ50123", "Audi", "A4 Avant", 1999, "Black");
         testSubject.addCar("AB35728", "Toyota", "Corolla", 2002, "Green");
@@ -55,8 +51,7 @@ class CarCollectionTest5 {
         assertTrue(it.hasNext());
         ICar b = it.next();
 
-        if(a.getRegistrationNumber().equals("AB35728"))
-        {
+        if (a.getRegistrationNumber().equals("AB35728")) {
             ICar tmp = a;
             a = b;
             b = tmp;
